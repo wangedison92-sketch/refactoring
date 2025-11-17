@@ -52,7 +52,7 @@ Introduced errors?
 - No
 
 Regression tests:
-- All tests passed.
+- All tests passed
 
 ------------------------------------------------------
 [3] StatementPrinter.java — Resolve 11 CheckStyle issues
