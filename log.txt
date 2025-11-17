@@ -1,0 +1,187 @@
+====================================
+Refactoring Mini Assignment — log.txt
+====================================
+
+Author: Guanxi Wang
+Date: Nov 17 2025
+
+====================================
+Task 1 — Fixing CheckStyle Issues
+====================================
+
+------------------------------------------------------
+[1] Performance.java — Fix VisibilityModifier errors
+------------------------------------------------------
+CheckStyle complaint:
+- "Variable 'playID' must be private and have accessor methods."
+- "Variable 'audience' must be private and have accessor methods."
+
+Changes made:
+- Changed fields playID and audience to private final.
+- Added getters: getPlayID() and getAudience().
+- Updated StatementPrinter.java to use getters instead of direct field access.
+
+Reason:
+- CheckStyle requires all instance variables to be private for encapsulation.
+- Adding getters ensures compatibility with existing code.
+
+Introduced errors?
+- No.
+
+Regression tests:
+- All tests passed.
+
+------------------------------------------------------
+[2] Play.java — Fix VisibilityModifier and JavadocType
+------------------------------------------------------
+CheckStyle complaint:
+- "'name' must be private and have accessor methods."
+- "'type' must be private and have accessor methods."
+- "Type Javadoc comment is missing null tag."
+
+Changes made:
+- Converted fields name and type to private final.
+- Added getters getName() and getType().
+- Added a descriptive class-level Javadoc without @param tags.
+
+Reason:
+- CheckStyle enforces private fields.
+- Complete Javadoc required for class-level documentation.
+
+Introduced errors?
+- No.
+
+Regression tests:
+- All tests passed.
+
+------------------------------------------------------
+[3] StatementPrinter.java — Resolve 11 CheckStyle issues
+------------------------------------------------------
+CheckStyle complaints:
+1. invoice must be private with accessor methods.
+2. plays must be private with accessor methods.
+3. Local variables result, frmt, and play must be declared final.
+4. Magic numbers: 40000, 1000, 30, 100, 100.
+5. if construct must use braces '{}'.
+6. Missing @throws tag for RuntimeException in statement() Javadoc.
+
+Changes made:
+- Converted invoice and plays to private final with getters.
+- Added final modifiers to required variables.
+- Replaced magic numbers with Constants values.
+- Added missing braces for if ("comedy"...)
+- Added @throws RuntimeException to statement() Javadoc.
+
+Reason:
+- Compliance with CSC207 CheckStyle rules.
+- Improves readability and reduces duplication.
+
+Introduced errors?
+- No.
+
+Regression tests:
+- All tests passed.
+
+------------------------------------------------------
+Task 1 Final Verification
+------------------------------------------------------
+CheckStyle:
+- All files pass with 0 errors.
+
+Tests:
+- All JUnit tests pass.
+
+====================================
+Task 2 — Refactoring (Chapter 13)
+====================================
+
+------------------------------------------------------
+[Task 2.1] Extract Function — Extract amount calculation
+------------------------------------------------------
+Changes made:
+- Moved switch block for amount calculation into:
+      private int getAmount(Performance performance)
+
+Reason:
+- Follows Chapter 13 Extract Function.
+- Simplifies statement() by separating calculation logic.
+
+Introduced errors?
+- No.
+
+Regression tests:
+- Passed.
+
+------------------------------------------------------
+[Task 2.2] Extract Function — Extract volume credits logic
+------------------------------------------------------
+Changes made:
+- Extracted volume credit computation into:
+      private int getVolumeCredits(Performance performance)
+
+Reason:
+- Removes duplication and prepares for further refactoring steps.
+
+Introduced errors?
+- No.
+
+Regression tests:
+- Passed.
+
+------------------------------------------------------
+[Task 2.3] Extract Helpers — getPlay() and usd()
+------------------------------------------------------
+Changes made:
+- Added:
+      private Play getPlay(Performance performance)
+      private String usd(int amount)
+
+Reason:
+- Removes repeated lookup code.
+- Centralizes currency formatting logic.
+
+Introduced errors?
+- No.
+
+Regression tests:
+- Passed.
+
+------------------------------------------------------
+[Task 2.4] Reorganize and simplify statement() method
+------------------------------------------------------
+Before refactoring:
+- statement() contained logic for:
+    * amount calculation
+    * credit computation
+    * formatting
+    * summing totals
+
+Refactoring:
+- Created:
+      private int getTotalAmount()
+      private int getTotalVolumeCredits()
+- statement() now only formats the final output.
+
+Reason:
+- Matches the final structure in Chapter 13.
+- Eliminates long-method smell and improves maintainability.
+
+Introduced errors?
+- No.
+
+Regression tests:
+- Passed.
+
+------------------------------------------------------
+Task 2 Final Verification
+------------------------------------------------------
+CheckStyle:
+- All helper methods updated with proper Javadoc (@param, @return).
+- 0 CheckStyle errors.
+
+Tests:
+- All tests pass successfully.
+
+====================================
+End of log.txt
+====================================
