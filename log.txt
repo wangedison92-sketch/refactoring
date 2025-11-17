@@ -107,7 +107,7 @@ Reason:
 - Simplifies statement() by separating calculation logic.
 
 Introduced errors?
-- No.
+- No
 
 Regression tests:
 - Passed.
