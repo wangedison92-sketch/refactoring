@@ -110,7 +110,7 @@ Introduced errors?
 - No
 
 Regression tests:
-- Passed.
+- Passed
 
 ------------------------------------------------------
 [Task 2.2] Extract Function — Extract volume credits logic
