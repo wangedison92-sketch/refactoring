@@ -89,7 +89,7 @@ CheckStyle:
 - All files pass with 0 errors.
 
 Tests:
-- All JUnit tests pass.
+- All JUnit tests pass
 
 ====================================
 Task 2 — Refactoring (Chapter 13)
