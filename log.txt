@@ -123,7 +123,7 @@ Reason:
 - Removes duplication and prepares for further refactoring steps.
 
 Introduced errors?
-- No.
+- No
 
 Regression tests:
 - Passed.
