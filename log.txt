@@ -77,7 +77,7 @@ Reason:
 - Improves readability and reduces duplication.
 
 Introduced errors?
-- No.
+- No
 
 Regression tests:
 - All tests passed.
