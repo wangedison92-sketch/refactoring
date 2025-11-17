@@ -146,7 +146,7 @@ public class StatementPrinter {
     /**
      * Computes the total amount owed for all performances in the invoice.
      *
-     * @return the total amount in cents s1 s2 s3 s4 s5
+     * @return the total amount in cents s1 s2 s3 s4 s5 s6
      */
     private int getTotalAmount() {
         int result = 0;
