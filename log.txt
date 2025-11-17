@@ -49,7 +49,7 @@ Reason:
 - Complete Javadoc required for class-level documentation.
 
 Introduced errors?
-- No.
+- No
 
 Regression tests:
 - All tests passed.
