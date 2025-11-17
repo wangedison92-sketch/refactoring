@@ -80,7 +80,7 @@ Introduced errors?
 - No
 
 Regression tests:
-- All tests passed.
+- All tests passed
 
 ------------------------------------------------------
 Task 1 Final Verification
