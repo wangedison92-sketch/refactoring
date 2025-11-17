@@ -29,7 +29,7 @@ Introduced errors?
 - No
 
 Regression tests:
-- All tests passed.
+- All tests passed
 
 ------------------------------------------------------
 [2] Play.java — Fix VisibilityModifier and JavadocType
