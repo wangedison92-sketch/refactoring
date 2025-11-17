@@ -26,7 +26,7 @@ Reason:
 - Adding getters ensures compatibility with existing code.
 
 Introduced errors?
-- No.
+- No
 
 Regression tests:
 - All tests passed.
